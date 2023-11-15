@@ -4,4 +4,4 @@
 3) If you are not using bollingbroke penitentiary as your prison you will need to setup the polyzone in `client.lua` line 93 (I will add a config option for the polyzone in the future.)
 
 ## Finally enjoy the script and put it to good use
--- Benn3t
+# Benn3t
