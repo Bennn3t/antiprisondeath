@@ -110,8 +110,8 @@ if Config.CheckPrisonGrounds then
 		ManagePrisonZone()
 	end
 
-    RegisterNetEvent("BJCore:Client:OnPlayerLoaded")
-    AddEventHandler("BJCore:Client:OnPlayerLoaded", function()
+    RegisterNetEvent("QBCore:Client:OnPlayerLoaded")
+    AddEventHandler("QBCore:Client:OnPlayerLoaded", function()
         if PrisonZone == nil then
             CreatePrisonZone()
         end
