@@ -105,7 +105,7 @@ if Config.CheckPrisonGrounds then
             name="prison",
             minZ = 40.00642,
             maxZ = 73.213783,
-            debugPoly = true -- Set to false if live server
+            debugPoly = false -- Set to false if live server
 		})
 		ManagePrisonZone()
 	end
