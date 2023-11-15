@@ -2,7 +2,7 @@ Config = Config or {}
 
 Config = {
     MinHealth = 100, -- Health the player will get respawned at.
-    Framework = 'BJCore', -- QBCore or BJCore
+    Framework = 'QBCore', -- QBCore or BJCore
     ShowDebugPrints = true, -- Set to false if live server
     CheckPrisonGrounds = true, -- Checks if player is within the prison grounds before Reviving
     TeleportLocation = vector4(1765.6617, 2565.9589, 45.564975, 175.65957), -- Location player gets teleported to if CheckPrisonGrounds is set to true and they have time in jail left.
