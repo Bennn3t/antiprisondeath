@@ -128,8 +128,7 @@ if Config.CheckPrisonGrounds then
 	function ManagePrisonZone()
 		PrisonZone:onPlayerInOut(function(isPointInside, point)
 			if isPointInside then
-				print("Entered Zone")
-				-- print("Point: "..print(point))
+                if Config.ShowDebugPrints then print("Entered Zone") end
                 InPrison = true
 			else
                 InPrison = false
@@ -137,8 +136,7 @@ if Config.CheckPrisonGrounds then
 				if Player.metadata["injail"] > 0 then
 					SetEntityCoords(PlayerPedId(), Config.TeleportLocation)
 				end
-				print("Left Zone")
-				-- print("Point: "..print(point))
+                if Config.ShowDebugPrints then print("Left Zone") end
 			end
 		end)
 	end
