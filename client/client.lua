@@ -109,13 +109,21 @@ if Config.CheckPrisonGrounds then
 		})
 		ManagePrisonZone()
 	end
-
-    RegisterNetEvent("QBCore:Client:OnPlayerLoaded")
-    AddEventHandler("QBCore:Client:OnPlayerLoaded", function()
-        if PrisonZone == nil then
-            CreatePrisonZone()
-        end
-    end)
+    if Config.Framework == 'QBCore' then
+        RegisterNetEvent("QBCore:Client:OnPlayerLoaded")
+        AddEventHandler("QBCore:Client:OnPlayerLoaded", function()
+            if PrisonZone == nil then
+                CreatePrisonZone()
+            end
+        end)
+    elseif Config.Framework == 'BJCore' then
+        RegisterNetEvent("BJCore:Client:OnPlayerLoaded")
+        AddEventHandler("BJCore:Client:OnPlayerLoaded", function()
+            if PrisonZone == nil then
+                CreatePrisonZone()
+            end
+        end)
+    end
 
 	function ManagePrisonZone()
 		PrisonZone:onPlayerInOut(function(isPointInside, point)
