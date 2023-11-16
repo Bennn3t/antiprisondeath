@@ -89,24 +89,7 @@ end)
 if Config.CheckPrisonGrounds then 
     InPrison = false
 	function CreatePrisonZone()
-		PrisonZone = PolyZone:Create({
-            vector2(1853.1308, 2699.9277),
-            vector2(1776.7375, 2766.2687),
-            vector2(1648.0854, 2761.9118),
-            vector2(1567.1546, 2683.5273),
-            vector2(1530.7141, 2586.3063),
-            vector2(1535.9989, 2467.802),
-            vector2(1655.8057, 2390.0795),
-            vector2(1761.768, 2405.101),
-            vector2(1827.0704, 2472.1213),
-            vector2(1827.5882, 2517.979),
-            vector2(1852.0126, 2517.6203)
-		}, {
-            name="prison",
-            minZ = 40.00642,
-            maxZ = 73.213783,
-            debugPoly = false -- Set to false if live server
-		})
+		PrisonZone = PolyZone:Create(Config.PolyZonePoints, Config.PolyzoneOptions)
 		ManagePrisonZone()
 	end
     if Config.Framework == 'QBCore' then
