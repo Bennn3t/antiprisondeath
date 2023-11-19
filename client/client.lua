@@ -3,10 +3,10 @@ if Config.Framework == 'QBCore' then
     Framework = exports['qb-core']:GetCoreObject()
 elseif Config.Framework == 'BJCore' then
     Framework = nil
-    Citizen.CreateThread(function() 
+    CreateThread(function() 
         while Framework == nil do
             TriggerEvent("BJCore:GetObject", function(obj) Framework = obj end)
-            Citizen.Wait(200)
+            Wait(200)
         end
     end)
 else
@@ -29,7 +29,7 @@ AddEventHandler('gameEventTriggered', function(event, data)
                 if GetEntityHealth(ped) < Config.MinHealth then
                     if Config.ShowDebugPrints then print('Players health is below Config.MinHealth') end
                     while GetEntitySpeed(ped) > 0.5 or IsPedRagdoll(ped) or IsPedArmed(ped) do
-                        Citizen.Wait(10)
+                        Wait(10)
                     end
                     if Config.ShowDebugPrints then print('Players ragdolled or speed above 0.5 or armed') end
                     if Config.CheckPrisonGrounds then
@@ -38,12 +38,14 @@ AddEventHandler('gameEventTriggered', function(event, data)
                                 if not IsPedAPlayer(sourceOfDeath) then
                                     if Config.ShowDebugPrints then print('Killed by an NPC') end
                                     if Config.NPCAttack then
+                                        Wait(150)
                                         TriggerEvent('hospital:client:Revive')
                                         if Config.ShowDebugPrints then print('Revivied') end
                                     end
                                 else
                                     if Config.ShowDebugPrints then print('Killed by a player') end
                                     if not Config.NPCAttack then
+                                        Wait(150)
                                         TriggerEvent('hospital:client:Revive')
                                         if Config.ShowDebugPrints then print('Revivied') end
                                     end
@@ -51,6 +53,7 @@ AddEventHandler('gameEventTriggered', function(event, data)
                             else
                                 if Config.ShowDebugPrints then print('Killed yourself') end
                                 if Config.FallDamage then
+                                    Wait(150)
                                     TriggerEvent('hospital:client:Revive')
                                     if Config.ShowDebugPrints then print('Revivied') end
                                 end
@@ -61,12 +64,14 @@ AddEventHandler('gameEventTriggered', function(event, data)
                             if not IsPedAPlayer(sourceOfDeath) then
                                 if Config.ShowDebugPrints then print('Killed by an NPC') end
                                 if Config.NPCAttack then
+                                    Wait(150)
                                     TriggerEvent('hospital:client:Revive')
                                     if Config.ShowDebugPrints then print('Revivied') end
                                 end
                             else
                                 if Config.ShowDebugPrints then print('Killed by a player') end
                                 if not Config.NPCAttack then
+                                    Wait(150)
                                     TriggerEvent('hospital:client:Revive')
                                     if Config.ShowDebugPrints then print('Revivied') end
                                 end
@@ -74,6 +79,7 @@ AddEventHandler('gameEventTriggered', function(event, data)
                         else
                             if Config.ShowDebugPrints then print('Killed yourself') end
                             if Config.FallDamage then
+                                Wait(150)
                                 TriggerEvent('hospital:client:Revive')
                                 if Config.ShowDebugPrints then print('Revivied') end
                             end
