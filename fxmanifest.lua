@@ -2,14 +2,16 @@ games {'gta5'}
 
 fx_version 'cerulean'
 
-description 'Stops players dying to fists while in prison.'
-version '1.0'
+name "antiprisondeath"
+description "Stops players dying while in prison"
+author "Benn3t"
+version "1.0"
 
 client_scripts {
     'config.lua',
     'client/*.lua',
-    -- '@polyzone/client.lua', -- BJCore (Disable if using QBCore)
     '@PolyZone/client.lua', -- QBCore (Disable if using BJCore)
+    -- '@polyzone/client.lua' -- BJCore (Disable if using QBCore)
 }
 
 dependencies {
