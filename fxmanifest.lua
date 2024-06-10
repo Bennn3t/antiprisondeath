@@ -3,7 +3,7 @@ games {'gta5'}
 fx_version 'cerulean'
 
 name "antiprisondeath"
-description "Stops players dying while in prison"
+description "Revives players on death, when in prison."
 author "Benn3t"
 version "1.0"
 
